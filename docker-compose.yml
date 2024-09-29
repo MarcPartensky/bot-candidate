@@ -1,0 +1,7 @@
+services:
+  bot-candidate:
+    build: .
+    ports:
+      - "5901:5901"
+      - "6080:6080"
+
