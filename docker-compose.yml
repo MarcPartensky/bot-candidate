@@ -1,7 +1,9 @@
 services:
   bot-candidate:
     build: .
+    privileged: true
     ports:
       - "5901:5901"
       - "6080:6080"
-
+    devices:
+      - /dev/dri

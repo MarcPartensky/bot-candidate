@@ -10,8 +10,10 @@ pkgs.dockerTools.buildImage {
     coreutils
     wget
     git
-    hyprland
+    # hyprland
+    plasma-desktop
     tigervnc
+    # wayvnc
     novnc
     zsh
     alacritty
@@ -29,5 +31,21 @@ pkgs.dockerTools.buildImage {
   # Configurer le démarrage du conteneur avec le script build.sh
   config = {
     Cmd = [ "/root/build.sh" ];
+
+    # Créer un utilisateur 'user'
+    # environment.systemPackages = [
+    #   pkgs.useradd
+    # ];
+
+    # Création de l'utilisateur
+    # Remplacez "password" par le mot de passe souhaité
+    system.user = {
+      user = {
+        isNormalUser = true;
+        home = "/home/user";
+        shell = pkgs.bash;
+        extraGroups = [ "wheel" ];
+      };
+    };
   };
 }
