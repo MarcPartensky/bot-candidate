@@ -14,6 +14,7 @@ pkgs.dockerTools.buildImage {
     plasma-desktop
     tigervnc
     # wayvnc
+    xorg.xinit
     novnc
     zsh
     alacritty
