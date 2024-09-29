@@ -16,6 +16,7 @@ pkgs.dockerTools.buildImage {
     zsh
     alacritty
     firefox
+    procps # ps cmd needed for novnc
   ];
 
   # # Ajouter le script de démarrage build.sh
